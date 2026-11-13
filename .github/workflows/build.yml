@@ -7,7 +7,6 @@ jobs:
       - uses: actions/checkout@v4
       - name: Unzip project
         run: |
-          ls -la
           unzip -o prism-mod-source.zip
           ls -la prism
       - uses: actions/setup-java@v4
@@ -16,7 +15,7 @@ jobs:
           java-version: 21
       - uses: gradle/actions/setup-gradle@v4
         with:
-          gradle-version: "8.14"
+          gradle-version: "9.2.0"
       - name: Build
         working-directory: prism
         run: gradle build
